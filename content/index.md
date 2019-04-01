@@ -1,27 +1,18 @@
 ---
-title: "Min fina titel"
+title: "Johan"
 ---
 Min me-sida i kursen oophp
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/index.md`.
 
-[FIGURE src="image/me.jpg?w=400&a=4,27,11,0&cf&sharpen" class="right" caption="Bild på mig, ätandes glass och hållandes ett kort på någon jultillställning."]
+[FIGURE src="image/jag.jpg?w=200" class="right" caption="En uppställd Johan."]
 
-Detta är min me-sida i kursen. Denna sidan innehåller en presentation av mig själv. Underhåll denna sidan under hela kursen och uppdatera den efter hand och behov.
+Johan Hanses heter jag, född i Falun, till en början uppvuxen i Leksand vid sjön Siljan och senare mot tonåren i Falun. Det var egentligen mer fram och tillbaka än så, men vi säger så så länge.
 
-Så, en presentation en bra början. Skriv några ord om dig själv. Jag börjar.
+Som barn och var det Nintendo och framför allt Zelda serien som var av intresse. Senare mot tonåren så upptäcktes musiken vilken upptog hela tonåren, både lyssnandet och utövandet. Detta ledde i sin tur till att det bildades band och band måste ha en hemsida. På så sätt kom jag i kontakt med HTML och byggde ett otal hemsidor med inline CSS, att koppla ett stylesheet var inget jag hade kunskap om då.
 
-Mitt namn är Mikael Roos. Född och uppvuxen i Bankeryd, Småland, strax utanför Jönköping, i ett villaområde som byggdes upp samtidigt som vi flyttade in där. Jag gillade landhockey och har spelat bandy och hockey samt gått bowlinggymnasiet i Nässjö. Jag har varit städare, diskare, kallskänka, servitör och kock. På ett bananskal landade jag i Ronneby när jag började högskolan 1990 där och nu är jag kvar med fru, barn och så vidare.
+Efter gymnasium och högre studier inom ljudproduktion och religionshistoria, där jag fortfarande satt och knackade bandhemsidor och designade mySpace-sidor kopplade till musikutövandet, så var det dags att börja jobba… på riktigt…
 
-Programmering har alltid intresserat mig sedan 13-årsåldern och min första dator var en Spectravideo 328 med bandspelare.
+Jag började arbeta som maskinbiträde på ett tryckeri och där arbetade jag fram till januari 2018 då jag slutade på tryckeriet, då i från rollen som produktionschef, och dessutom nybliven tvillingfar till Arvid och Elis.
 
-Om jag skall nämna någon hobby, förutom webbprogrammering, så får det bli att bära sten på sommarstugetomten, och det finns sten så det räcker och blir över.
-
-Till och från får jag för mig att börja på lite hobbies, ett år satsade jag på pokerspel, ett annat år var det geocaching, sedan turfing och nu på sistone verkar släktforskning lite spännande. Annars kan jag alltid koda på något av mina opensource-projekt, det finns och blir över.
-
-Vill du läsa mer om vad jag jobbat med så kan du kika på min [Linkedin-profil](https://www.linkedin.com/in/pt90mr/).
-
-Vi syns och hörs i forum och chatt!
-
-/Mikael
+Jag funderade då mycket på vad jag skulle göra härnäst, att vidareutbilda mig för att kunna byta branch blev mer och mer det som lockade och att det sedan blev mot webbutveckling låg ju där latent sedan länge. Sen om det blir mot front-end eller back-end eller båda återstår att se, i min forna roll på tryckeriet så jobbade jag mycket med it-ansvarig och utvecklade affärssystemen och ett antal SQL-queries har det blivit sen dess.
