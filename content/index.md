@@ -9,9 +9,9 @@ Min me-sida i kursen oophp
 
 Johan Hanses heter jag, född i Falun, till en början uppvuxen i Leksand vid sjön Siljan och senare mot tonåren i Falun. Det var egentligen mer fram och tillbaka än så, men vi säger så så länge.
 
-Som barn och var det Nintendo och framför allt Zelda serien som var av intresse. Senare mot tonåren så upptäcktes musiken vilken upptog hela tonåren, både lyssnandet och utövandet. Detta ledde i sin tur till att det bildades band och band måste ha en hemsida. På så sätt kom jag i kontakt med HTML och byggde ett otal hemsidor med inline CSS, att koppla ett stylesheet var inget jag hade kunskap om då.
+Som barn var det Nintendo och framför allt Zelda serien som var av intresse. Senare mot tonåren så upptäcktes musiken vilken upptog i princip hela tonåren, både lyssnandet och utövandet. Detta ledde i sin tur till att det bildades band och band måste ha en hemsida. På så sätt kom jag i kontakt med HTML och byggde ett otal hemsidor med inline CSS, att koppla ett stylesheet var inget jag hade kunskap om då.
 
-Efter gymnasium och högre studier inom ljudproduktion och religionshistoria, där jag fortfarande satt och knackade bandhemsidor och designade mySpace-sidor kopplade till musikutövandet, så var det dags att börja jobba… på riktigt…
+Efter gymnasium och högre studier inom ljudproduktion och religionshistoria, där jag fortfarande satt och knackade bandhemsidor och designade mySpace-sidor kopplade till musikutövandet, så var det dags att börja jobba… på riktigt.
 
 Jag började arbeta som maskinbiträde på ett tryckeri och där arbetade jag fram till januari 2018 då jag slutade på tryckeriet, då i från rollen som produktionschef, och dessutom nybliven tvillingfar till Arvid och Elis.
 
