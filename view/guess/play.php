@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\View;
+namespace PJH\View;
 
 /**
  * Render content within an article.
@@ -12,5 +12,23 @@ namespace Anax\View;
 
 
 
-?><h1>Play the game</h1>
-<p>Player is: <?= $who ?></p>
+?>
+<h1>Gissa numret</h1>
+
+<p>Gissa på ett nummer mellan 1 och 100, du har <?= $tries ?> gissningar kvar.</p>
+
+<!-- <form method="POST" action="redir.php"> -->
+<form method="POST">
+    <input type="text" name="guess">
+    <input type="submit" name="doGuess" value="Gissa">
+    <input type="submit" name="doInit" value="Börja om">
+    <input type="submit" name="doCheat" value="Fuska">
+</form>
+
+<?php if ($res) : ?>
+    <p> <?= $res ?></p>
+<?php endif; ?>
+
+<?php if ($doCheat) : ?>
+    <p>Fusk: Det nummer jag tänker på är <?= $res ?>.</p>
+<?php endif; ?>
