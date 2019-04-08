@@ -105,9 +105,7 @@ class Guess
     {
         if ($guess < 1 || $guess > 100) {
             // session_destroy();
-            throw new GuessException("Gissa på ett nummer FRÅN 1 TILL 100."); 
-            // session_destroy();
-
+            throw new GuessException("Gissa på ett nummer FRÅN 1 TILL 100.");
         }
 
         --$this->tries;

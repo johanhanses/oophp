@@ -39,7 +39,7 @@ $app->router->get("guess/play", function () use ($app) {
     $data = [
         "guess" => $guess ?? null,
         "tries" => $tries,
-        "number" => $number ?? null, 
+        "number" => $number ?? null,
         "doGuess" => $doGuess ?? null,
         "doCheat" => $doCheat ?? null,
         "res" => $res,
@@ -91,10 +91,10 @@ $app->router->post("guess/play", function () use ($app) {
         $_SESSION["guess"] = $guess;
     } elseif ($doCheat) {
     // cheat
-        $game = new PJH\Guess\Guess($number, $tries);        
+        $game = new PJH\Guess\Guess($number, $tries);
         $res = $game->cheat();
         $_SESSION["res"] = $res;
     }
 
-    return $app->response->redirect("guess/play");    
+    return $app->response->redirect("guess/play");
 });
