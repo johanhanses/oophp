@@ -75,14 +75,12 @@ $app->router->get("guess/play", function () use ($app) {
 //         $_SESSION["number"] = $game->number();
 //         $_SESSION["tries"] = $game->tries();
 //         return $app->response->redirect("guess/play");
-//     } 
+//     }
 //     return $app->response->redirect("guess/play");
-// });   
-    
-    
-    
-    
-    
+// });
+
+
+
 //     elseif ($doGuess && $tries === 1) {
 //     //re init the game if out of guesses
 //         $game = new PJH\Guess\Guess();
@@ -104,15 +102,6 @@ $app->router->get("guess/play", function () use ($app) {
 //         $res = $game->cheat();
 //         $_SESSION["res"] = $res;
 //     }
-
-
-
-
-
-
-
-
-
 
 
 
