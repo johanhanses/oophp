@@ -8,8 +8,11 @@ class Dice
 {
     /**
      * @var int $sides number of sides on a dice.
+     * @var int $lastRoll last roll of a dice.
      */
     private $sides;
+    private $lastRoll;
+
 
     /**
      * Constructor to throw one dice
@@ -34,6 +37,6 @@ class Dice
 
     public function getLastRoll()
     {
-        return $this->sides;
+        return $this->lastRoll = $this->sides;
     }
 }

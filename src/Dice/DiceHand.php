@@ -2,24 +2,22 @@
 namespace PJH\Dice;
 
 /**
- * A dicehand, consisting of dices.
+ * A player dicehand, consisting of dices.
  */
 class DiceHand extends Dice
 {
     /**
-     * @var Dice $dices     Array of dices.
-     * @var int  $values    Array consisting of last roll of the dices.
+     * @var Dice    $dices        Array of dices.
+     * @var int     $values       Array consisting of last roll of the dices.
+     * @var int     $playerSum    int consisting of the sum of last roll of the dices.
+     * @var string  $message      string consisting of messages to the player.
      */
     private $dices;
     private $values;
-
     private $playerSum;
-
-    private $playerTotSum;
-
     private $message;
 
-    private $round = 0;
+
 
     /**
      * Constructor to initiate the dicehand with a number of dices.
@@ -68,8 +66,10 @@ class DiceHand extends Dice
 
     /**
      * Get the Sum of all dices.
+     * also store a message to the player depending on the return sum.
      *
      * @return int as the sum of all dices.
+     * @return void string containing the message.
      */
     public function sum()
     {
@@ -88,23 +88,23 @@ class DiceHand extends Dice
     /**
      * Get the total score of a player
      *
-     * @return void assigns the message to @var
+     * @return int the total score of players round.
      */
     public function totalSum($sum, $totSum)
     {
         if ($sum) {
             return $totSum = $totSum + $sum;
         } else {
-            return $totSum = null;
+            return $totSum = $sum;
         }
     }
 
 
 
     /**
-     * Get the total score of a player
+     * Check if player is a winner and create a message.
      *
-     * @return void assigns the message to @var
+     * @return void assigns the message to @var $plmessage
      */
     public function checkWinner($totSum)
     {

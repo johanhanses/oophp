@@ -2,30 +2,28 @@
 namespace PJH\Dice;
 
 /**
- * A dicehand, consisting of dices.
+ * A dicehand for the computer, consisting of dices.
  */
 class ComputerHand extends DiceHand
 {
     /**
-     * @var Dice $dices     Array of dices.
-     * @var int  $values    Array consisting of last roll of the dices.
+     * @var Dice $dices          Array of dices.
+     * @var int  $values         Array consisting of last roll of the dices.
+     * @var int  $computerSum    int consisting of the sum of last roll of the dices.
+     * @var int  $cmessage       string consisting of messages about computers round to the player.
+     * @var int  $rolls          int the number of times the computer throw it's dices.
      */
     private $dices;
     private $values;
-
     private $computerSum;
-
-    private $computerTotSum;
-
-    private $win;
-
     private $cmessage;
-
     private $rolls;
+
+
 
     /**
      * Constructor to initiate the dicehand with a number of dices.
-     *
+     * Throws the set number of dices 1, 2 or 3 times on random.
      * @param int $dices Number of dices to create, defaults to 2.
      */
     public function __construct(int $dices = 2)
@@ -36,7 +34,6 @@ class ComputerHand extends DiceHand
         // $this->cmessage = "The computer has rolled, the player can now roll again";
 
         for ($j = 0; $j < $this->rolls; $j++) {
-
             for ($i = 0; $i < $dices; $i++) {
                 $oneThrow = new Dice();
 
@@ -79,8 +76,10 @@ class ComputerHand extends DiceHand
 
     /**
      * Get the Sum of all dices.
+     * also store a message to the player depending on the return sum.
      *
      * @return int as the sum of all dices.
+     * @return void string containing the message.
      */
     public function sum()
     {
@@ -97,9 +96,9 @@ class ComputerHand extends DiceHand
 
 
     /**
-     * Get the total score of a player
+     * Get the total score of the computer
      *
-     * @return void assigns the message to @var
+     * @return int the total score of computer round.
      */
     public function totalSum($cSum, $cTotSum)
     {
@@ -113,23 +112,26 @@ class ComputerHand extends DiceHand
 
 
     /**
-     * check if computer is wthe winner.
+     * check if computer is the winner and create a message.
      *
-     * @return @var string assigns the message to @var
+     * @return void assigns the message to @var $cmessage
      */
     public function checkWinner($cTotSum)
     {
         if ($cTotSum >= 100) {
-            return $this->cmessage = "Computer got a 100 score, computer won, press restart for a new game";
+            // return $this->cmessage = "Computer got a 100 score, computer won, press restart for a new game";
+
+            $comessage = "Computer got a 100 score, computer won, press restart for a new game";
+            $this->setMessage($comessage);
         }
     }
 
 
 
     /**
-     * Set the message to the computer
+     * Set the message regarding computer round.
      *
-     * @return void The message to the player
+     * @return void
      */
     public function setMessage($comessage)
     {
@@ -139,9 +141,9 @@ class ComputerHand extends DiceHand
 
 
     /**
-     * Get the message to the $computerSum
+     * Get the message about computer round.
      *
-     * @return string The message to the player
+     * @return string The message.
      */
     public function getMessage()
     {

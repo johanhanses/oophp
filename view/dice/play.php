@@ -1,21 +1,12 @@
 <?php
 namespace PJH\Dice;
 
-
-
-// $game = new DiceHand();
-// $player->roll();
-// echo "<pre>";
-// var_dump($_SESSION);
-// var_dump($message);
-// echo "</pre>";
-
 ?><h1>Tärningsspelet 100</h1>
 <div class="game">
     <div class="player">
         <h2>Player</h2>
         <p><?= ($values) ? implode(", ", $values) : null ?></p>
-        <p><?= $message ?></p>
+        <p><b><?= $message ?></b></p>
         <p>The sum of this hand is: <?= $sum ?>.</p>
         <p>Total player game sum is: <?= $tot ?>.</p>
 
