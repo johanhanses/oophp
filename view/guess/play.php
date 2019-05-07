@@ -13,7 +13,7 @@ namespace PJH\View;
 
 
 ?>
-<h1>Gissa numret</h1>
+<h1>Gissa mitt nummer</h1>
 
 <p>Gissa på ett nummer mellan 1 och 100, du har <?= $tries ?> gissningar kvar.</p>
 

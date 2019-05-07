@@ -7520,3 +7520,12 @@ h4 {
 .footer-column {
     display: none;
 }
+
+.game {
+    display: flex;
+    justify-content: space-between;
+}
+.route-Dice100 .region-main,
+.route-dice-play .region-main {
+    margin-left: 0;
+}
