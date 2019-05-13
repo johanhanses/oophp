@@ -30,12 +30,11 @@ class ComputerHand extends DiceHand implements HistogramInterface
      * Throws the set number of dices 1, 2 or 3 times on random.
      * @param int $dices Number of dices to create, defaults to 2.
      */
-    public function __construct(int $dices = 2)
+    public function __construct(int $playerScore, int $computerScore, int $dices = 2)
     {
         $this->dices = [];
         $this->values = [];
-        $this->rolls = rand(1, 3);
-        // $this->cmessage = "The computer has rolled, the player can now roll again";
+        $this->rolls = $this->aiInt($playerScore, $computerScore);
 
         for ($j = 0; $j < $this->rolls; $j++) {
             for ($i = 0; $i < $dices; $i++) {
@@ -48,6 +47,24 @@ class ComputerHand extends DiceHand implements HistogramInterface
             if (in_array(1, $this->values())) {
                 $j = $this->rolls;
             }
+        }
+    }
+
+
+
+    /**
+     * Computer intelligence/ tactics
+     *
+     * @return int the number of times the computer should throws its dice pair.
+     */
+    public function aiInt($playerScore, $computerScore)
+    {
+        if ($playerScore < $computerScore) {
+            return 1;
+        } elseif ($playerScore == $computerScore) {
+            return 2;
+        } elseif ($playerScore > $computerScore) {
+            return 3;
         }
     }
 
@@ -173,12 +190,12 @@ class ComputerHand extends DiceHand implements HistogramInterface
      *
      * @return int the value of the rolled dice.
      */
-     public function rollaDice()
-     {
-         parent::rollDice();
+    public function rollaDice()
+    {
+        parent::rollDice();
 
-         $this->serie = $this->dices;
-         return $this->serie;
-         // ->getLastRoll();
-     }
+        $this->serie = $this->dices;
+        return $this->serie;
+        // ->getLastRoll();
+    }
 }

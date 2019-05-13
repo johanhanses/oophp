@@ -122,9 +122,9 @@ class DiceController implements AppInjectableInterface
             "cValues" => $cValues ?? null,
             "cSum" => $cSum ?? null,
             "cTotSum" => $cTotSum ?? null,
-            "cmessage" => $cmessage ?? null,
-            "hist" => $hist ?? null,
-            "debugg" => $debugg ?? null
+            // "cmessage" => $cmessage ?? null,
+            "hist" => $hist ?? null
+            // "debugg" => $debugg ?? null
         ];
 
         $this->app->page->add("dice1/play", $data);
@@ -199,11 +199,12 @@ class DiceController implements AppInjectableInterface
     {
         // Assign incoming variables
         $game = $this->app->session->get("game");
-        $totSum = $this->app->session->get("totSum");
+        $totSum = $this->app->session->get("totSum", 0);
+        $cTotSum = $this->app->session->get("cTotSum", 0);
         $histogram = $this->app->session->get("hist");
         $serie = $this->app->session->get("allNums");
 
-        $cGame = new ComputerHand();
+        $cGame = new ComputerHand($totSum, $cTotSum, 2);
         $cGame->rollaDice();
 
         $this->app->session->set("cGame", $cGame);
@@ -211,7 +212,6 @@ class DiceController implements AppInjectableInterface
         $cGame->setMessage($cmessage);
 
         $cSum = $cGame->sum();
-        $cTotSum = $this->app->session->get("cTotSum", null);
         $cTotSum = $cGame->totalSum($cSum, $cTotSum);
         $cmessage = $cGame->getMessage();
 

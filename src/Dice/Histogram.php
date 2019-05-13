@@ -27,7 +27,7 @@ class Histogram
      *
      * @return void.
      */
-    public function InjectData(HistogramInterface $object)
+    public function injectData(HistogramInterface $object)
     {
         $this->serie = $object->getHistogramSerie();
         $this->min = $object->getHistogramMin();
@@ -83,7 +83,7 @@ class Histogram
                 $row = "";
                 foreach ($allNumbers as $value) {
                     if ($value == $i) {
-                    $row = $row . "*";
+                        $row = $row . "*";
                     }
                 }
                 $string .= $i . ": " . $row . "<br>";

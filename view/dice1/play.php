@@ -37,7 +37,6 @@ namespace PJH\Dice;
     <div class="computer">
         <h2>Computer</h2>
         <p><?= ($cValues) ? implode(", ", $cValues) : null ?></p>
-        <p><?= $cmessage ?></p>
         <p>The sum of the computers hand is: <?= $cSum ?>.</p>
         <p>Total computer game sum is: <?= $cTotSum ?>.</p>
     </div>

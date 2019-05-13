@@ -11,7 +11,7 @@ class Dice
      * @var int $oneDice the value of ine dice.
      */
     protected $sides;
-    private   $oneDice;
+    private $oneDice;
 
 
     /**
