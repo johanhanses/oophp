@@ -7506,6 +7506,10 @@ a.rm-button.rm-clicked .rm-button-face-2 {
     font-size: 90%
 }
 
+.site-logo-text-icon {
+    display: none;
+}
+
 .site.logo {
     display: none;
 }
@@ -7525,7 +7529,8 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
-.route-Dice100 .region-main,
-.route-dice-play .region-main {
+
+.region-main {
+    width: 100%;
     margin-left: 0;
 }

@@ -4,8 +4,12 @@ namespace PJH\Dice;
 /**
  * A dicehand for the computer, consisting of dices.
  */
-class ComputerHand extends DiceHand
+class ComputerHand extends DiceHand implements HistogramInterface
 {
+    use HistogramTrait2;
+
+
+
     /**
      * @var Dice $dices          Array of dices.
      * @var int  $values         Array consisting of last roll of the dices.
@@ -149,4 +153,32 @@ class ComputerHand extends DiceHand
     {
         return $this->cmessage;
     }
+
+
+
+    /**
+     * Get max value for the histogram.
+     *
+     * @return int with the max value.
+     */
+    public function getHistogramMax()
+    {
+        return $this->sides;
+    }
+
+
+
+    /**
+     * Roll the dice, remeber it's value in the serie and return its value.
+     *
+     * @return int the value of the rolled dice.
+     */
+     public function rollaDice()
+     {
+         parent::rollDice();
+
+         $this->serie = $this->dices;
+         return $this->serie;
+         // ->getLastRoll();
+     }
 }

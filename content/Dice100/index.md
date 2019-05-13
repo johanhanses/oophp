@@ -1,6 +1,6 @@
 #Tärningsspelet 100
 
-[Starta ett nytt spel!](dice/init)
+[Rulla tärningarna!](dice1/init)
 
 ###Spelregler tärningsspelet 100
 

@@ -8,7 +8,6 @@ class Dice
 {
     /**
      * @var int $sides number of sides on a dice.
-     * @var int $oneDice the value of ine dice.
      */
     protected $sides;
     private   $oneDice;
@@ -30,8 +29,7 @@ class Dice
 
     public function rollDice()
     {
-        $this->sides = 6;
-        $this->oneDice = rand(1, $this->sides);
+        $this->oneDice = rand(1, 6);
         return $this->oneDice;
     }
 
