@@ -30,8 +30,7 @@ class CreateDiceHandTest extends TestCase
         // $this->assertInstanceOf("\PJH\Dice\Dice", $dice);
 
         $res = $dice->roll();
-
-        $exp = $dice->values();
+        $exp = null;
 
         $this->assertEquals($exp, $res);
     }
@@ -45,10 +44,15 @@ class CreateDiceHandTest extends TestCase
     {
         $dice = new DiceHand();
         $values = $dice->values();
+        // $values1 = [2, 1];
 
         $res = array_sum($values);
         $exp = $dice->sum();
         $this->assertEquals($exp, $res);
+
+        // $res1 = array_sum($values1);
+        // $exp1 = $dice->sum();
+        // $this->assertEquals($exp1, $res1);
     }
 
 

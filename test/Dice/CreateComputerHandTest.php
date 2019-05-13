@@ -13,9 +13,9 @@ class CreateComputerHandTest extends TestCase
      * Construct object and verify that the object has the expected
      * properties. Use no arguments.
      */
-    public function testCreateComputerHandNoArgs()
+    public function testCreateComputerHand()
     {
-        $diceHand = new ComputerHand();
+        $diceHand = new ComputerHand(12, 14, 2);
         $this->assertInstanceOf("\PJH\Dice\Dice", $diceHand);
     }
 
@@ -26,12 +26,11 @@ class CreateComputerHandTest extends TestCase
      */
     public function testRollMethod()
     {
-        $dice = new ComputerHand();
+        $dice = new ComputerHand(12, 14, 2);
         // $this->assertInstanceOf("\PJH\Dice\Dice", $dice);
-        $diceroll[] = $dice->roll();
-        $res = $diceroll;
 
-        $exp = $dice->values();
+        $res = $dice->roll();
+        $exp = null;
 
         $this->assertEquals($exp, $res);
     }
@@ -43,7 +42,7 @@ class CreateComputerHandTest extends TestCase
      */
     public function testSumMethod()
     {
-        $dice = new ComputerHand();
+        $dice = new ComputerHand(12, 14, 2);
         $values = $dice->values();
 
         $res = array_sum($values);
@@ -58,7 +57,7 @@ class CreateComputerHandTest extends TestCase
      */
     public function testWinnerMethod()
     {
-        $dice = new ComputerHand();
+        $dice = new ComputerHand(101, 90, 2);
 
         $totSum = 101;
         $comessage = "";
