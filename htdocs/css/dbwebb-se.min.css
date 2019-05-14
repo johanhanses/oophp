@@ -6789,7 +6789,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 
 .rm-max .rm-mobile .rm-submenu-button:hover {
     text-decoration: none;
-    background-color: #ccc
+    background-color: #333;
 }
 
 .rm-max .rm-mobile li ul {
@@ -7533,4 +7533,33 @@ h4 {
 .region-main {
     width: 100%;
     margin-left: 0;
+}
+
+.inner-wrap-flash {
+    max-width: 99%;
+}
+
+.inner-wrap-flash img {
+    width: 100%;
+}
+
+.region-header-col-1 {
+    width: 100%
+}
+
+.region-header-col-2 {
+    margin-top: 0.4%;
+    width: 100%;
+    background-color: #424242;
+    color: #eee;
+}
+
+.rm-desktop li a {
+    background-color: #424242;
+    color: #eee;
+}
+
+.rm-desktop li a:hover {
+    background-color: #424242;
+    color: #eee;
 }
