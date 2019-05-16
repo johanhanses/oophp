@@ -93,5 +93,10 @@ return [
             "url" => "Dice100",
             "title" => "Spela hundra-spelet",
         ],
+        [
+            "text" => "Filmdatabas",
+            "url" => "movie",
+            "title" => "Filmdatabas",
+        ],
     ],
 ];

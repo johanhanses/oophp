@@ -7500,10 +7500,16 @@ a.rm-button.rm-clicked .rm-button-face-2 {
     background-image: linear-gradient(to right, #fff, #ccc)
 }
 
+
+
+/* my stuff*/
+
+
+
 .site-logo-text a,
 .my-navbar li a {
     font-family: sans-serif;
-    font-size: 90%
+    font-size: 80%
 }
 
 .site-logo-text-icon {
@@ -7562,4 +7568,9 @@ h4 {
 .rm-desktop li a:hover {
     background-color: #424242;
     color: #eee;
+}
+
+.thumb {
+    max-width: 100px;
+    max-height: 100px;
 }
