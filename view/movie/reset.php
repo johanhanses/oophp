@@ -1,5 +1,11 @@
 <?php
+
+namespace PJH\Movie;
+
 // Restore the database to its original settings
+
+var_dump($output);
+
 $file   = "sql/setup.sql";
 $mysql  = "/Applications/XAMPP/xamppfiles/bin/mysql";
 $output = null;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\View;
+namespace PJH\Movie;
 
 /**
  * Template file to render a view with content.
@@ -13,6 +13,8 @@ namespace Anax\View;
 if (!$resultset) {
     return;
 }
+
+// var_dump($resultset);
 ?>
 
 <table>
