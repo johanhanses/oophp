@@ -6,6 +6,6 @@
 global $di;
 $router = $di->get("router");
 
-$router->add("", function() use ($di) {
+$router->add("", function () use ($di) {
     return "index";
 }, "A sample index route.");
