@@ -27,40 +27,7 @@ class MovieController implements AppInjectableInterface
     /**
      * @var string $db a sample member variable that gets initialised
      */
-    private $db = "not active";
-
-
-
-    // /**
-    //  * The initialize method is optional and will always be called before the
-    //  * target method/action. This is a convienient method where you could
-    //  * setup internal properties that are commonly used by several methods.
-    //  *
-    //  * @return void
-    //  */
-    // public function initialize() : void
-    // {
-    //     // Use to initialise member variables.
-    //     $this->db = "active";
-    //
-    //     // Use $this->app to access the framework services.
-    // }
-
-
-
-    /**
-     * This is the index method action, it handles:
-     * ANY METHOD mountpoint
-     * ANY METHOD mountpoint/
-     * ANY METHOD mountpoint/index
-     *
-     * @return string
-     */
-    // public function indexAction() : string
-    // {
-    //     // Deal with the action and return a response.
-    //     return __METHOD__ . ", \$db is {$this->db}";
-    // }
+    // private $db = "not active";
 
 
 
@@ -117,7 +84,7 @@ class MovieController implements AppInjectableInterface
     /**
      * search-title process
      *
-     * @return void
+     * @return object
      */
     public function processTitleActionPost() : object
     {
@@ -163,7 +130,7 @@ class MovieController implements AppInjectableInterface
     /**
      * search-year process
      *
-     * @return void
+     * @return object
      */
     public function processYearActionPost() : object
     {
@@ -190,17 +157,20 @@ class MovieController implements AppInjectableInterface
 
 
     /**
-     * manage db
+     * manage db view
      *
      * @return object
      */
     public function selectActionGet() : object
     {
         $title = "Manage database | oophp";
-        // $resultset = $this->app->session->get("resultset2");
+
+        $this->app->db->connect();
+        $sql = "SELECT id, title FROM movie;";
+        $movies = $this->app->db->executeFetchAll($sql);
 
         $data = [
-            "resultset" => $resultset ?? null,
+            "movies" => $movies ?? null,
         ];
 
         $this->app->page->add("movie/header");
@@ -214,41 +184,70 @@ class MovieController implements AppInjectableInterface
 
 
     /**
-     * reset
+     * process for manage db
      *
      * @return object
      */
-    public function resetActionGet() : object
+    public function processSelectActionPost() : object
     {
-        $title = "Reset database | oophp";
-        // $resultset = $this->app->session->get("resultset2");
+        $movieId = getPost("movieId");
 
-        // $data = [
-        //     "resultset" => $resultset ?? null,
-        // ];
+        if (getPost("doSave")) {
+            $movieTitle = getPost("movieTitle");
+            $movieYear  = getPost("movieYear");
+            $movieImage = getPost("movieImage");
+            $this->app->db->connect();
+            $sql = "UPDATE movie SET title = ?, year = ?, image = ? WHERE id = ?;";
+            $this->app->db->execute($sql, [$movieTitle, $movieYear, $movieImage, $movieId]);
+        }
+
+        if (getPost("doDelete")) {
+            $this->app->db->connect();
+            $sql = "DELETE FROM movie WHERE id = ?;";
+            $this->app->db->execute($sql, [$movieId]);
+            return $this->app->response->redirect("movie/select");
+        } elseif (getPost("doAdd")) {
+            $this->app->db->connect();
+            $sql = "INSERT INTO movie (title, year, image) VALUES (?, ?, ?);";
+            $this->app->db->execute($sql, ["A title", 2017, "img/noimage.png"]);
+            $movieId = $this->app->db->lastInsertId();
+            $this->app->session->set("movieId", $movieId);
+            return $this->app->response->redirect("movie/movieEdit");
+        } elseif (getPost("doEdit") && is_numeric($movieId)) {
+            $this->app->session->set("movieId", $movieId);
+            return $this->app->response->redirect("movie/movieEdit");
+        }
+        return $this->app->response->redirect("movie/select");
+    }
+
+
+
+    /**
+     * edit db view
+     *
+     * @return object
+     */
+    public function movieEditActionGet() : object
+    {
+        $title = "Manage database | oophp";
+
+        $movieId = $this->app->session->get("movieId");
+
+        $this->app->db->connect();
+        $sql = "SELECT * FROM movie WHERE id = ?;";
+        $movie = $this->app->db->executeFetchAll($sql, [$movieId]);
+        $movie = $movie[0];
+
+        $data = [
+            "movieId" => $movieId ?? null,
+            "movie" => $movie ?? null
+        ];
 
         $this->app->page->add("movie/header");
-        $this->app->page->add("movie/reset");
+        $this->app->page->add("movie/movieEdit", $data);
 
         return $this->app->page->render([
             "title" => $title,
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

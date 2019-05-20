@@ -30,7 +30,7 @@ namespace PJH\Movie;
 </form> -->
 
 
-<form method="post">
+<form method="post" action="processSelect">
     <fieldset>
     <legend>Manage movies</legend>
 

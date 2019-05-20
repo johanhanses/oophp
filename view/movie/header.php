@@ -17,7 +17,7 @@ namespace Anax\View;
     <br>
     <!-- <a href="?route=select">SELECT *</a> | -->
     <a href="<?= url("movie/index") ?>">Show all movies</a> |
-    <a href="<?= url("movie/reset") ?>">Reset database</a> |
+    <!-- <a href="<?= url("movie/reset") ?>">Reset database</a> | -->
     <a href="<?= url("movie/searchtitle") ?>">Search title</a> |
     <a href="<?= url("movie/searchyear") ?>">Search year</a> |
     <!-- <a href="?route=movie-select">Select</a> | -->
