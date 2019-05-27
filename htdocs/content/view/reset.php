@@ -1,7 +1,7 @@
 <?php
 // Restore the database to its original settings
 $file   = "sql/setup.sql";
-$mysql  = "/usr/bin/mysql";
+$mysql  = "/Applications/XAMPP/xamppfiles/bin/mysql";
 $output = null;
 
 // Extract hostname and databasename from dsn

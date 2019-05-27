@@ -35,13 +35,6 @@ class MyTextFilter
      */
     public function parse($text, $filters)
     {
-        // $callbacks = [
-        //     "bbcode"    => "bbcode2html",
-        //     "link"      => "makeClickable",
-        //     "markdown"  => "markdown",
-        //     "nl2br"     => "nl2br",
-        // ];
-
         // Make an array of the comma separated string $filters
         if (is_array($filters)) {
             $filter = $filters;

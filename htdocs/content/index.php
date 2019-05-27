@@ -119,7 +119,7 @@ switch ($route) {
         $sql = <<<EOD
 SELECT
     *,
-    CASE 
+    CASE
         WHEN (deleted <= NOW()) THEN "isDeleted"
         WHEN (published <= NOW()) THEN "isPublished"
         ELSE "notPublished"
@@ -157,7 +157,7 @@ SELECT
     DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%dT%TZ') AS published_iso8601,
     DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%d') AS published
 FROM content
-WHERE 
+WHERE
     slug = ?
     AND type = ?
     AND (deleted IS NULL OR deleted > NOW())

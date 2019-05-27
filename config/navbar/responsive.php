@@ -104,5 +104,10 @@ return [
             "url" => "textfilter",
             "title" => "Test med textfilter",
         ],
+        [
+            "text" => "CMS",
+            "url" => "mycontent",
+            "title" => "Mitt första CMS",
+        ],
     ],
 ];
